@@ -27,7 +27,7 @@ const syaratBilPrima = (num: number) => {
 
   if (num % 2 === 0 || num % 3 === 0) return false; // 2.bilangan genap/habis dibagi/modulus
 
-  let loopResult = [];
+  let loopResult: number[] = [];
 
   for (let i = 5; i * i <= num; i += 6) {
     //  25,35,49,55,65,77,91,95
@@ -39,7 +39,7 @@ const syaratBilPrima = (num: number) => {
 
 const BilanganPrima = (arrReverse: number[]) => {
   //   console.log("bukan bilangan primes", arrReverse);
-  let notPrimes: number[] = [];
+  let notPrimes: any = [];
 
   for (let i = 0; i < arrReverse.length; i++) {
     if (syaratBilPrima(arrReverse[i])) {
