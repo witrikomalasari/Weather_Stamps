@@ -1,7 +1,8 @@
 import dayjs from 'dayjs';
 
 export const formatDate = (dateF: string | undefined) => {
-  const formatdate = dayjs(dateF).format('ddd, DD MMM YYYY');
+  let format = 'ddd, DD MMM YYYY';
+  const formatdate = dayjs(dateF).format(format);
 
   return formatdate;
 };
