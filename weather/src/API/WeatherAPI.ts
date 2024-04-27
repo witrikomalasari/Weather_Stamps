@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-export const ProductAPIs = axios.create({
-  baseURL: 'https://api.openweathermap.org/data/3.0/onecall/',
+export const WeatherAPIAPIs = axios.create({
+  baseURL: 'https://api.openweathermap.org/data/2.5/',
 });
-
-// https://api.openweathermap.org/data/3.0/onecall/timemachine?lat={lat}&lon={lon}&dt={time}&appid={API key}
