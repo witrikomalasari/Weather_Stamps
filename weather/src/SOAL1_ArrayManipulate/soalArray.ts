@@ -57,14 +57,40 @@ const bukanBilanganPrima = (arrPrimes: number[], arr: number[]) => {
   return arr;
 };
 
+// 2. Ganti angka yang dapat dibagi dengan angka 3 dengan text 'Foo'
+// 3. Ganti angka yang dapat dibagi dengan angka 5 dengan text 'Bar'
+// 4. Ganti angka yang dapat dibagi dengan angka 3  dan angka 5 dengan text 'FooBar'
+// 5. Print angka menyamping tidak kebawah
+const manipulateNumToTxt = (newArr: number[]): (number | string)[] => {
+  //   console.log("mew", newArr);
+  let txt: any = [];
+
+  for (let i: number = 0; i < newArr.length; i++) {
+    let typevalue: string | number = newArr[i];
+
+    if (typevalue % 3 === 0 && typevalue % 5 === 0) {
+      typevalue = 'FooBar';
+    } else if (typevalue % 3 === 0) {
+      typevalue = 'Foo';
+    } else if (typevalue % 5 === 0) {
+      typevalue = 'Bar';
+    }
+    txt.push(typevalue);
+  }
+
+  return txt;
+};
+
 // const resultArr = initialArr(start, end); // kirim nilai awal dan batas nilai ke function initialArr
 // const resultRevers = reversArray(resultArr);
 // const primes = BilanganPrima(resultRevers);
 // const excludePrimes = bukanBilanganPrima(primes, resultRevers);
+// const manipulate = manipulateNumToTxt(excludePrimes).join();
 
 // onsole.group('Mini Test PT. STAMPINDO ');
 // console.log('check nilai array awal', resultArr);
 // console.log('reverse array awal', resultRevers); // cara kirim/lempar hasil return function initialArr yaitu array awal 1-100
 // console.log('this is primes', primes);
 // console.log('eliminate primes', excludePrimes);
+// console.log(manipulate);
 // console.groupEnd();
