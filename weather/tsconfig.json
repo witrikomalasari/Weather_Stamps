@@ -1,0 +1,31 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "jsx": "react-native",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "target": "esnext",
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "test": ["test"],
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@navigators/*": ["src/navigators/*"],
+      "@screens/*": ["src/screens/*"],
+      "@theme/*": ["src/theme/*"],
+      "@API/*": ["src/API/*"],
+      "@redux/*": ["src/redux/*"],
+      "@utils/*": ["src/utils/*"],
+      "@models/*": ["src/models/*"]
+    }
+  }
+}
