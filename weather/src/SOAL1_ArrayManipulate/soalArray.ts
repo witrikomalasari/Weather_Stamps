@@ -42,7 +42,7 @@ const BilanganPrima = (arrReverse: number[]) => {
   let notPrimes: any = [];
 
   for (let i = 0; i < arrReverse.length; i++) {
-    if (syaratBilPrima(arrReverse[i])) {
+    if (syaratBilPrima([i])) {
       notPrimes.push(i);
     }
   }
