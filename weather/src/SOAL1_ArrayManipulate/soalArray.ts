@@ -85,7 +85,7 @@ const manipulateNumToTxt = (newArr: number[]): (number | string)[] => {
 // const resultRevers = reversArray(resultArr);
 // const primes = BilanganPrima(resultRevers);
 // const excludePrimes = bukanBilanganPrima(primes, resultRevers);
-// const manipulate = manipulateNumToTxt(excludePrimes).join();
+// const manipulate = manipulateNumToTxt(excludePrimes).join(',');
 
 // onsole.group('Mini Test PT. STAMPINDO ');
 // console.log('check nilai array awal', resultArr);
