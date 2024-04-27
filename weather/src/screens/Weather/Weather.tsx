@@ -3,6 +3,7 @@ import {useAppDispatch} from '@hooks/useAppDispatch';
 import {useAppSelector} from '@hooks/useAppSelector';
 import {getWeatherDataAsync} from '@redux/actions/WeatherAction';
 import {formatDate} from '@utils/Date';
+import {initialArr, reversArray} from '@utils/ManipulatArray';
 import React, {FC, useEffect} from 'react';
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -28,28 +29,43 @@ const Weather: FC<IWeather> = () => {
     return match;
   });
 
+  // soal array
+  let start: number = 1;
+  let end: number = 100;
+
+  // CALL
+  const resultArr = initialArr(start, end);
+  const resultRevers = reversArray(resultArr);
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
       <Text style={styles.txt}>Weather Forecast: </Text>
-      <FlatList
-        keyExtractor={(_item, index) => 'key' + index}
-        data={timeFilter}
-        horizontal={false}
-        showsVerticalScrollIndicator={false}
-        bounces={false}
-        nestedScrollEnabled
-        renderItem={({item}) => {
-          // console.log('item', item);
-          return (
-            <View style={{flexDirection: 'row'}}>
-              <Text style={styles.txt}>{formatDate(item?.dt_txt)}: </Text>
-              <Spacer width={10} />
-              <Text style={styles.txt}>{item?.main?.temp}</Text>
-              <Text style={styles.txt}>&deg;C</Text>
-            </View>
-          );
-        }}
-      />
+      <View>
+        <FlatList
+          keyExtractor={(_item, index) => 'key' + index}
+          data={timeFilter}
+          horizontal={false}
+          showsVerticalScrollIndicator={false}
+          bounces={false}
+          nestedScrollEnabled
+          renderItem={({item}) => {
+            // console.log('item', item);
+            return (
+              <View style={{flexDirection: 'row'}}>
+                <Text style={styles.txt}>{formatDate(item?.dt_txt)}: </Text>
+                <Spacer width={10} />
+                <Text style={styles.txt}>{item?.main?.temp}</Text>
+                <Text style={styles.txt}>&deg;C</Text>
+              </View>
+            );
+          }}
+        />
+      </View>
+      <Spacer height={50} />
+      <View>
+        <Text style={styles.txt}>SOAL ARRAY</Text>
+        <Text>{resultRevers}</Text>
+      </View>
     </SafeAreaView>
   );
 };
