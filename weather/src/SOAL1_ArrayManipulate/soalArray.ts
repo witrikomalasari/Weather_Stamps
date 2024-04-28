@@ -42,7 +42,7 @@ const BilanganPrima = (arrReverse: number[]) => {
   let notPrimes: any = [];
 
   for (let i = 0; i < arrReverse.length; i++) {
-    if (syaratBilPrima([i])) {
+    if (syaratBilPrima(i)) {
       notPrimes.push(i);
     }
   }
@@ -87,7 +87,7 @@ const manipulateNumToTxt = (newArr: number[]): (number | string)[] => {
 // const excludePrimes = bukanBilanganPrima(primes, resultRevers);
 // const manipulate = manipulateNumToTxt(excludePrimes).join(',');
 
-// onsole.group('Mini Test PT. STAMPINDO ');
+// console.group('Mini Test PT. STAMPS ');
 // console.log('check nilai array awal', resultArr);
 // console.log('reverse array awal', resultRevers); // cara kirim/lempar hasil return function initialArr yaitu array awal 1-100
 // console.log('this is primes', primes);
