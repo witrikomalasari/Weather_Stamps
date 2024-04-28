@@ -39,15 +39,15 @@ const syaratBilPrima = (num: number) => {
 
 const BilanganPrima = (arrReverse: number[]) => {
   //   console.log("bukan bilangan primes", arrReverse);
-  let notPrimes: any = [];
+  let Primes: any = [];
 
   for (let i = 0; i < arrReverse.length; i++) {
     if (syaratBilPrima(i)) {
-      notPrimes.push(i);
+      Primes.push(i);
     }
   }
 
-  return notPrimes;
+  return Primes;
 };
 
 // 1. Jangan print angka Bilangan Prima
